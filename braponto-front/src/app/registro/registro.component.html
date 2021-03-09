@@ -22,7 +22,7 @@
 <div [ngClass]="getClass()">
   <h4>Relatório de registros do funcionario: {{selected_funcionario.nome}}</h4>
 
-  <table class="alt">
+  <table id="tabelaRegistros" class="alt">
     <thead>
       <tr>
         <th>Data</th>
@@ -34,7 +34,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let registro of registrosAtt">
-        <td>{{registro.dia}}</td>
+        <td id="diaRegistro">{{registro.dia}}</td>
         <td>{{registro.primeiro_registro}}</td>
         <td>{{registro.segundo_registro}}</td>
         <td>{{registro.terceiro_registro}}</td>

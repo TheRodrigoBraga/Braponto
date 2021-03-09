@@ -200,7 +200,7 @@ input, select, textarea {
 		}
 
 			#relogio{
-				font-size: 5em;
+				font-size: 4.5em;
 				font-family: 'Oswald', sans-serif;
 				text-align: center;
 				margin-bottom: 0.2em;
@@ -2453,7 +2453,7 @@ input, select, textarea {
 				}
 
 	dl {
-		margin: 0 0 2em 0;
+		margin: 0 0 0.5em 0;
 	}
 
 		dl dt {
@@ -3178,7 +3178,7 @@ input, select, textarea {
 		@media screen and (max-width: 480px) {
 
 			#header {
-				padding: 2em 1.5em 0.1em 1.5em ;
+				padding: 3em 1.5em 0.1em 1.5em ;
 			}
 
 				#header.alt {
@@ -3188,9 +3188,9 @@ input, select, textarea {
 		}
 
 		@media screen and (max-width: 360px) {
-
+			
 			#header {
-				padding: 2.5em 1em 0.1em 1em ;
+				padding: 3.5em 1em 0.1em 1em ;
 			}
 
 				#header.alt {
@@ -3220,15 +3220,16 @@ input, select, textarea {
 		background-color: #606b56;
 		color: white;
 		position: absolute;
-		width: 64em;
-		max-width: calc(100% - 4em);
+		width: 90%;
 		padding: 0.5em;
 		background-color:#606b56;
 		border-top-left-radius: 0.25em;
 		border-top-right-radius: 0.25em;
 		cursor: default;
+		align-items: center;
 		text-align: center;
 		font-family: 'Rubik', sans-serif;
+		margin: 0;
 	}
 
 		#nav input, #nav select, #nav textarea {
@@ -3268,6 +3269,7 @@ input, select, textarea {
 			margin: 0;
 			padding: 0;
 			list-style: none;
+			text-align: center;
 		}
 
 			#nav ul li {
@@ -3322,17 +3324,76 @@ input, select, textarea {
 					font-size: 0.9em;
 				}
 
-		@media screen and (max-width: 736px) {
-
-			#nav {
-				display: none;
-			}
-
-				#nav + #main {
-					padding-top: 0;
-				}
-
+	@media screen and (max-width: 360px) {
+		#nav{
+			font-size: 0.7em;
 		}
+
+		#ulProblematica, #problema{
+			text-align: center !important;
+			position: absolute !important;
+		}
+
+		#nav ul{
+			width: auto;
+			text-align: center;
+			padding: 0;
+			font-size: 0.8em;
+			text-align: center;
+			margin: 0;
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		#nav{
+			font-size: 0.7em;
+			width: 92%;
+		}
+
+		#nav ul{
+			text-align: center;
+			padding: 0 0 0 2.8em;
+		}
+	}
+
+	@media screen and (max-width: 736px) {
+		#nav{
+			font-size: 0.7em;
+			width: 92%;
+		}
+
+		#nav ul{
+			text-align: center;
+			padding: 0 0 0 2.8em;
+		}
+	}
+
+	@media screen and (max-width: 980px) {
+		#nav{
+			font-size: 0.7em;
+			width: 92%;
+		}
+
+		#nav ul{
+			text-align: center;
+			padding: 0 0 0 2.8em;
+		}
+	}
+
+	@media screen and (max-width: 1280px) {
+		#nav{
+			font-size: 0.7em;
+			width: 92%;
+		}
+
+		#nav ul{
+			position:relative;
+			text-align: center;
+			padding: 0 0 0 0;
+			align-self: center;
+			
+		}
+	}
 
 /* Main */
 
@@ -3693,7 +3754,7 @@ input, select, textarea {
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
-		padding: 5em 5em 3em 5em ;
+		padding: 7em 5em 3em 5em ;
 		width: calc(100% + 2em);
 		margin: 0 0 3em -2em;
 	}
@@ -3713,7 +3774,7 @@ input, select, textarea {
 		@media screen and (max-width: 1280px) {
 
 			#footer {
-				padding: 4em 4em 2em 4em ;
+				padding: 5em 4em 2em 4em ;
 			}
 
 		}
@@ -3721,7 +3782,7 @@ input, select, textarea {
 		@media screen and (max-width: 980px) {
 
 			#footer {
-				padding: 4em 3em 2em 3em ;
+				padding: 5em 3em 2em 3em ;
 				display: block;
 				margin: 0 0 3em 0;
 				width: 100%;
@@ -3815,4 +3876,24 @@ input, select, textarea {
 	text-align: center !important;
 	color: aqua;
 	font-family: 'Rubik', sans-serif;
+}
+
+@media screen and (max-width: 360px) {
+	#tabelaRegistros{
+		font-size: 0.9em;
+	}
+
+	#diaRegistro{
+		font-size: 0.7em;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#tabelaRegistros{
+		font-size: 0.9em;
+	}
+
+	#diaRegistro{
+		font-size: 0.7em;
+	}
 }
