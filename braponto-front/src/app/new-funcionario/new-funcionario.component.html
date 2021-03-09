@@ -1,0 +1,7 @@
+<p>Novo Funcionário</p>
+
+<input type="text" [(ngModel)]="funcionario.nome" placeholder="Nome completo do funcionário"><br>
+<input type="text" [(ngModel)]="funcionario.matricula" placeholder="Matricula do funcionário"><br>
+<button (click)="save()" class="button primary small">Salvar</button>
+
+<router-outlet></router-outlet>

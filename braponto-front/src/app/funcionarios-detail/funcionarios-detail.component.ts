@@ -1,6 +1,8 @@
+import { parseSelectorToR3Selector } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { ApiService } from './api.service';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { AppComponent } from '../app.component';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-funcionarios-detail',
@@ -9,26 +11,87 @@ import { ApiService } from './api.service';
 })
 export class FuncionariosDetailComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private api:ApiService) { }
+  constructor(private route: ActivatedRoute, private api:ApiService, private router: Router, private appComponente: AppComponent) { }
 
   selected_funcionario = {id: '', matricula: '', nome: ''}
 
+  funcionarios = [
+    {id: 1, nome: 'Carregando...', matricula: 1},
+    {id: 2, nome: 'Carregando...', matricula: 2},
+    {id: 3, nome: 'Carregando...', matricula: 3}
+  ];
+
+  selected_id:any
+
   ngOnInit(): void {
-    this.loadFuncionarios()
+    this.getFuncionarios()
   }
 
-  loadFuncionarios() {
-    const id = this.route.snapshot.paramMap.get('id')
-    console.log(id)
+  getFuncionarios = () => {
+    this.api.getAllFuncionarios().subscribe(
+      data => {
+        this.funcionarios = data
+      },
+      error => {
+        console.log('Aconteceu um erro.', error.message)
+      }
+    )
+  }
+
+  funcionarioSelect = (funcionario:any) => {
+    this.selected_funcionario = funcionario
+    //this.router.navigate(['funcionarios-detail', funcionario.id])
+  }
+
+  loadFuncionarios(id:any) {
     this.api.getFuncionario(id).subscribe(
       data => {
-        console.log(data)
         this.selected_funcionario = data
       },
       error => {
         console.log("Aconteceu um erro", error.message)
       }
     )
+  }
+
+  update(){
+    this.api.updateFuncionario(this.selected_funcionario).subscribe(
+      data => {
+        this.selected_funcionario = data
+        this.funcionarios
+      },
+      error => {
+        console.log("Aconteceu um erro", error.message)
+      }
+    )
+  }
+
+  delete(){
+    this.api.deleteFuncionario(this.selected_funcionario.id).subscribe(
+      data => {
+        let index = -1
+        this.funcionarios.forEach((e:any, i:any) => {
+          if(e.id === this.selected_funcionario.id)
+            index = i
+        });
+        this.funcionarios.splice(index, 1)    
+      },
+      error => {
+        console.log("Aconteceu um erro", error.message)
+      }
+    )
+    this.selected_funcionario = {id: '', matricula: '', nome: ''}
+  }
+
+  newFuncionario() {
+    this.router.navigate(['new-funcionario'])
+  }
+
+  getClass(){
+    if(this.selected_funcionario.id === ''){
+      return 'esconder'
+    }else
+      return 'nada'
   }
 
 }

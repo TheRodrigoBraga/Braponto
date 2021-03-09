@@ -1,2 +1,29 @@
-<h2>Detalhes do funcionário</h2>
-Funcionário carregado: {{ selected_funcionario.nome }}
+<h3>Funcionários</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Matrícula</th>
+      <th>Nome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="cursor" *ngFor="let funcionario of funcionarios" (click)="funcionarioSelect(funcionario)">
+      <td>{{funcionario.id}}</td>
+      <td>{{funcionario.matricula}}</td>
+      <td>{{funcionario.nome}}</td>
+    </tr>
+  </tbody>
+</table>
+<button class="button primary small" (click)="newFuncionario()" style="margin-right: 10px">Novo</button><br><br>
+<div [ngClass]="getClass()">
+  <h3>Detalhes do funcionário</h3>
+  <p>Você está editando: {{ selected_funcionario.nome }}</p>  
+
+  <input type="text" [(ngModel)]="selected_funcionario.id" readonly="readonly"> <br>
+  <input type="text" [(ngModel)]="selected_funcionario.nome"> <br>
+  <input type="text" [(ngModel)]="selected_funcionario.matricula" maxlength="6" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;"> <br>
+  <button (click)="update()" style="margin-right: 10px">Update Funcionário</button> 
+  <button (click)="delete()" style="margin-right: 10px">Delete Funcionário</button>
+</div>

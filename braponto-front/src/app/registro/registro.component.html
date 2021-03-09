@@ -1,0 +1,64 @@
+<h3>Registro de ponto</h3><br>
+
+<h4>Funcionários</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Matrícula</th>
+      <th>Nome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="cursor" *ngFor="let funcionario of funcionarios" (click)="funcionarioSelect(funcionario)">
+      <td>{{funcionario.id}}</td>
+      <td>{{funcionario.matricula}}</td>
+      <td>{{funcionario.nome}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div [ngClass]="getClass()">
+  <h4>Relatório de registros do funcionario: {{selected_funcionario.nome}}</h4>
+
+  <table class="alt">
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>1° registro</th>
+        <th>2° registro</th>
+        <th>3° registro</th> 
+        <th>4° registro</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let registro of registrosAtt">
+        <td>{{registro.dia}}</td>
+        <td>{{registro.primeiro_registro}}</td>
+        <td>{{registro.segundo_registro}}</td>
+        <td>{{registro.terceiro_registro}}</td>
+        <td>{{registro.quarto_registro}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!--FAZER ALGUNS AJUSTES
+<button class="button primary small" (click)="mostrarEsconder()">Registro de ponto manual</button>
+
+
+<div [ngClass]="abrirRegistroManual()">
+  <br><br>
+  <h4>Registro de ponto manual</h4>
+  <label for=""></label>Funcionario
+  <input type="text" value="{{selected_funcionario.nome}}" readonly="readonly">
+  <label for=""></label>Data
+  <input type="text" value="{{diaCompleto}}" readonly="readonly"><br>
+  <input type="time" [(ngModel)]="registro.primeiro_registro"><br><br>
+  <input type="time" [(ngModel)]="registro.segundo_registro"><br><br>
+  <input type="time" [(ngModel)]="registro.terceiro_registro"><br><br>
+  <input type="time" [(ngModel)]="registro.quarto_registro"><br><br>
+  <button (click)="saveRegistro()" class="button primary small">Salvar</button>
+</div>
+-->

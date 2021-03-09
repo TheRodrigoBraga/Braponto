@@ -1,15 +1,2 @@
-<h1>Funcionários</h1>
-
-<ul>
-  <li *ngFor="let funcionario of funcionarios" (click)="FuncionarioSelect(funcionario)">
-    {{funcionario.id}} - {{funcionario.matricula}} - {{funcionario.nome}}
-  </li>
-</ul>
-
-<!--
-  <p>{{ selected_funcionario.id }}</p>
-  <p>{{ selected_funcionario.matricula }}</p>
-  <p>{{ selected_funcionario.nome }}</p>
--->
 
 <router-outlet></router-outlet>
