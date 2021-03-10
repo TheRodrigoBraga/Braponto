@@ -8,10 +8,10 @@ import { RegistroComponent } from './registro/registro.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'funcionarios-detail', redirectTo: 'funcionarios-detail', pathMatch: 'full', component: FuncionariosDetailComponent },
-  { path: 'new-funcionario', redirectTo: 'new-funcionario', pathMatch: 'full', component: NewFuncionarioComponent },
-  { path: 'registro', redirectTo: 'registro', pathMatch: 'full', component: RegistroComponent},
-  { path: 'home', redirectTo: 'home', pathMatch: 'full', component: HomeComponent}
+  { path: 'funcionarios-detail', component: FuncionariosDetailComponent },
+  { path: 'new-funcionario', component: NewFuncionarioComponent },
+  { path: 'registro', component: RegistroComponent},
+  { path: 'home', component: HomeComponent}
 ];
 
 @NgModule({
