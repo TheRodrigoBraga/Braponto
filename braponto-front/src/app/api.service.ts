@@ -6,8 +6,8 @@ import { Observable } from 'rxjs'
   providedIn: 'root'
 })
 export class ApiService {
-  baseUrl = 'http://localhost:8000/'
-  token = 'Token 9bfa4fd2f90ee43577ba469a9b92feece8ab5da2'
+  baseUrl = 'http://braponto.lojafarol.com.br:8000/'
+  token = 'Token 07a1c7bd9d6fd9c8849da207147a5683e2e5abe1'
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json')
     .set('Authorization', this.token)
 
