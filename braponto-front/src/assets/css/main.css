@@ -3230,6 +3230,7 @@ input, select, textarea {
 		text-align: center;
 		font-family: 'Rubik', sans-serif;
 		margin: 0;
+		top: 0;
 	}
 
 		#nav input, #nav select, #nav textarea {
