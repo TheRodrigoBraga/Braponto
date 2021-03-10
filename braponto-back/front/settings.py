@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -90,6 +90,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        'USER': 'django',
+        'PASSWORD': 'djangosenha',
+        'HOST': 'localhost',
+        'PORT': '',
+    },
+    'local': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -135,8 +143,7 @@ STATIC_URL = '/static/'
 
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:4200",
-    "http://braponto.lojafarol.com.br:80/",
-    "http://braponto.lojafarol.com.br:8000/"
+    "http://braponto.lojafarol.com.br"
 ]
 
 
