@@ -135,8 +135,7 @@ STATIC_URL = '/static/'
 
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:4200",
-    "http://braponto.lojafarol.com.br:80",
-    "http://braponto.lojafarol.com.br:8000"
+    "http://braponto.lojafarol.com.br:8000/"
 ]
 
 
