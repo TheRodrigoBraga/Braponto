@@ -9,6 +9,7 @@ import { RegistroComponent } from './registro/registro.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'funcionarios-detail', component: FuncionariosDetailComponent },
+  { path: 'funcionarios-detail/:id', component: FuncionariosDetailComponent },
   { path: 'new-funcionario', component: NewFuncionarioComponent },
   { path: 'registro', component: RegistroComponent},
   { path: 'home', component: HomeComponent}
