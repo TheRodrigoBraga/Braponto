@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
-import { AppRoutingModule } from '../app-routing.module';
 
 @Component({
   selector: 'app-new-funcionario',
@@ -17,7 +16,7 @@ export class NewFuncionarioComponent implements OnInit {
     {id: 3, nome: 'Carregando...', matricula: 3}
   ];
 
-  constructor(private api: ApiService, private router: Router, private appRouting: AppRoutingModule) { }
+  constructor(private api: ApiService, private router: Router) { }
 
   ngOnInit(): void {
   }

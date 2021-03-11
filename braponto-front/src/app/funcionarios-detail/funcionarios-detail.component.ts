@@ -1,9 +1,6 @@
-import { parseSelectorToR3Selector } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { AppComponent } from '../app.component';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
-import { AppRoutingModule } from '../app-routing.module';
 
 @Component({
   selector: 'app-funcionarios-detail',
@@ -12,7 +9,7 @@ import { AppRoutingModule } from '../app-routing.module';
 })
 export class FuncionariosDetailComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private api:ApiService, private router: Router, private appComponente: AppComponent, private appRouting: AppRoutingModule) { }
+  constructor(private route: ActivatedRoute, private api:ApiService, private router: Router) { }
 
   selected_funcionario = {id: '', matricula: '', nome: ''}
 

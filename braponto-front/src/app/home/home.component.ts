@@ -1,11 +1,6 @@
-import { parseSelectorToR3Selector } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { AppComponent } from '../app.component';
 import { ApiService } from 'src/app/api.service';
-import { LEADING_TRIVIA_CHARS } from '@angular/compiler/src/render3/view/template';
-import { stringify } from '@angular/compiler/src/util';
-import { AppRoutingModule } from '../app-routing.module';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +9,7 @@ import { AppRoutingModule } from '../app-routing.module';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private api: ApiService, private router: Router, private appComponente: AppComponent, private appRouting: AppRoutingModule) { }
+  constructor(private route: ActivatedRoute, private api: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     setInterval(() => {

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
-import { AppComponent } from '../app.component';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { AppRoutingModule } from '../app-routing.module';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -12,7 +10,7 @@ import { AppRoutingModule } from '../app-routing.module';
 export class RegistroComponent implements OnInit {
   registro = {funcionario: '', dia: '', primeiro_registro: '00:00:00', segundo_registro: '00:00:00', terceiro_registro: '00:00:00', quarto_registro: '08:00:00'}
 
-  constructor(private route: ActivatedRoute, private api: ApiService, private appComponent: AppComponent, private router: Router, private appRouting: AppRoutingModule) { }
+  constructor(private route: ActivatedRoute, private api: ApiService, private router: Router) { }
 
   selected_funcionario = {id: '', matricula: '', nome: ''}
 
