@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+from corsheaders.defaults import default_methods
 from pathlib import Path
 import os
 
@@ -26,7 +26,7 @@ SECRET_KEY = '_ftyfknhow*rj0u!n3e!t-b_o*)s@0&ee+c3#@vosw4m8x%q0y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['braponto.lojafarol.com.br']
+ALLOWED_HOSTS = ['*']
 
 #'braponto.lojafarol.com.br', '35.198.3.222', 'localhost', '127.0.0.1'
 
@@ -141,14 +141,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# CORS_ORIGIN_ALLOW_ALL = True # If this is used then `CORS_ORIGIN_WHITELIST` will not have any effect
-CORS_ALLOW_CREDENTIALS = True
-CORS_ORIGIN_WHITELIST = [
-    'http://braponto.lojafarol.com.br:8000',
-] # If this is used, then not need to use `CORS_ORIGIN_ALLOW_ALL = True`
-CORS_ORIGIN_REGEX_WHITELIST = [
-    'http://braponto.lojafarol.com.br:8000',
-]
+CORS_ORIGIN_ALLOW_ALL = True # If this is used then `CORS_ORIGIN_WHITELIST` will not have any effect
+#CORS_ALLOW_CREDENTIALS = True
+#CORS_ORIGIN_WHITELIST = [
+#    'http://braponto.lojafarol.com.br:8000',
+#] # If this is used, then not need to use `CORS_ORIGIN_ALLOW_ALL = True`
+#CORS_ORIGIN_REGEX_WHITELIST = [
+#   'http://braponto.lojafarol.com.br:8000',
+#]
+
+CORS_ALLOW_METHODS = default_methods
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
