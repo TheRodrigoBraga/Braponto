@@ -2,7 +2,8 @@
     <section id="content" class="main">
         <h3 id="relogio">{{horarioAtual}}</h3>
         <label for="recebeMatricula">Informe sua matrícula</label>
-        <input [(ngModel)]="matriculaInfo" id="recebeMatricula" class="col-12" type="text" name="matricula" value="" maxlength="6" placeholder="Ex.: 123456" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" style="text-align: center;"><br>
+        <input [(ngModel)]="matriculaInfo" id="recebeMatricula" class="col-12" type="text" name="matricula" value="" maxlength="6" placeholder="Ex.: 123456" style="text-align: center;"><br>
+        <!--   onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;"   -->
         <button id="registrar" class="button primary fit" type="submit" (click)="registrar()">REGISTRAR</button>
 
         <h3 [ngClass]="apresentaMensagem1()" id="mensagem">Olá {{funcionarioSelected.nome}}, você já registrou todos seus horários hoje.</h3>
