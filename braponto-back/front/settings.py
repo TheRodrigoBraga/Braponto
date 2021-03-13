@@ -90,14 +90,6 @@ WSGI_APPLICATION = 'front.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        'USER': 'django',
-        'PASSWORD': 'djangosenha',
-        'HOST': 'localhost',
-        'PORT': '',
-    },
-    'local': {
-        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
@@ -143,13 +135,14 @@ STATIC_URL = '/static/'
 
 
 CORS_ORIGIN_WHITELIST = [
-    'http://braponto.lojafarol.com.br',
+    'http://localhost:4200',
+    'http://braponto.lojafarol.com.br/',
 ] # If this is used, then not need to use `CORS_ORIGIN_ALLOW_ALL = True`
 #CORS_ORIGIN_REGEX_WHITELIST = [
 #   'http://braponto.lojafarol.com.br:8000',
 #]
 
-CORS_ALLOW_METHODS = default_methods
+#CORS_ALLOW_METHODS = default_methods
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
