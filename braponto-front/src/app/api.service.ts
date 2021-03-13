@@ -11,6 +11,7 @@ export class ApiService {
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json')
     .set('Authorization', this.token)
     .set('Access-Control-Allow-Origin', '*')
+    .set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
 
   constructor(private http: HttpClient) { }
 
