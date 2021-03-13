@@ -44,3 +44,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+braponto-back/media/
+braponto-back/mysite_uwsgi.ini
+braponto-back/uwsgi_params
