@@ -136,13 +136,14 @@ STATIC_URL = '/static/'
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:4200',
-    'http://braponto.lojafarol.com.br/',
+    'http://braponto.lojafarol.com.br:8000',
+    'http://braponto.lojafarol.com.br:80',
 ] # If this is used, then not need to use `CORS_ORIGIN_ALLOW_ALL = True`
 #CORS_ORIGIN_REGEX_WHITELIST = [
 #   'http://braponto.lojafarol.com.br:8000',
 #]
 
-#CORS_ALLOW_METHODS = default_methods
+CORS_ALLOW_METHODS = default_methods
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
