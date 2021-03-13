@@ -133,12 +133,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:4200',
-    'http://braponto.lojafarol.com.br:8000',
-    'http://braponto.lojafarol.com.br:80',
-] # If this is used, then not need to use `CORS_ORIGIN_ALLOW_ALL = True`
+
+#CORS_ORIGIN_WHITELIST = [
+#   'http://localhost:4200',
+#    'http://braponto.lojafarol.com.br:8000',
+#    'http://braponto.lojafarol.com.br:80',
+#] # If this is used, then not need to use `CORS_ORIGIN_ALLOW_ALL = True`
 #CORS_ORIGIN_REGEX_WHITELIST = [
 #   'http://braponto.lojafarol.com.br:8000',
 #]
